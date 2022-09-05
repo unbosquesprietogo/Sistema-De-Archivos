@@ -15,7 +15,7 @@ public class Controller {
 	}
 	
 	public void funcionar() {
-		
+		enlaces.getCreateTxt().generarVariosTxt(20);
 	}
 	
 	public void attachShutDownHook(){
