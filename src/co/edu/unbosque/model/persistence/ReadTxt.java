@@ -35,7 +35,7 @@ public class ReadTxt {
 				
 				String departamento = dataLine[0];
 				String municipio = dataLine[1];   
-				Date fecha = new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(dataLine[2]);
+				Date fecha = new SimpleDateFormat("MM/dd/yyyy HH:mm").parse(dataLine[2]);
 				String barrio = dataLine[3];      
 				String descripcion = dataLine[4]; 
 				String modalidad = dataLine[5];  		
