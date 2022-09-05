@@ -1,17 +1,34 @@
 package co.edu.unbosque.controller;
 
-import co.edu.unbosque.model.CalculoDelitos;
-import co.edu.unbosque.model.ReadTxt;
+import co.edu.unbosque.model.Enlaces;
+
 
 public class Controller {
+	
+	private Enlaces enlaces;
 
 	public Controller() {
-		 ReadTxt rt = new ReadTxt();
-		 CalculoDelitos cd = new CalculoDelitos();  
-		 cd.calcularCantidad(rt.readFile(),"genero");
-		 System.out.println();
-		 
-		 
-		 
+		enlaces = new Enlaces();
+		funcionar();
+		attachShutDownHook();
+		
 	}
+	
+	public void funcionar() {
+		
+	}
+	
+	public void attachShutDownHook(){
+		  Runtime.getRuntime().addShutdownHook(new Thread() {
+		    @Override
+		    public void run() {
+		    	Enlaces enlaces = new Enlaces();
+		    	enlaces.getReadTxt().getFileTxt().cambiarNombreFechaActual();
+		    }
+		  } );
+
+
+
+				
+		}
 }

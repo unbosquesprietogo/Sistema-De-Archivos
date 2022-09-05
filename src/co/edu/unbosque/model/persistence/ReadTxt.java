@@ -1,4 +1,4 @@
-package co.edu.unbosque.model;
+package co.edu.unbosque.model.persistence;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -9,15 +9,23 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+import co.edu.unbosque.model.Delito;
+
 public class ReadTxt {
 	
+	private FileTxt fileTxt;
+	
+	public ReadTxt() {
+		fileTxt = new FileTxt();
+	}
 	
 	public ArrayList<Delito> readFile() {
 		
 		ArrayList<Delito> listaDelitos = new ArrayList<>();
 		String linea;
 		try {
-			BufferedReader br = new BufferedReader(new FileReader("src/resources/archivo-1.txt",StandardCharsets.UTF_8));
+			
+			BufferedReader br = new BufferedReader(new FileReader(String.valueOf(fileTxt.getFile()),StandardCharsets.UTF_8));
 			br.readLine();
 			linea = br.readLine();
 			while(linea !=null) {
@@ -59,6 +67,13 @@ public class ReadTxt {
 		
 		return listaDelitos;
 	}
+
+
+	public FileTxt getFileTxt() {
+		return fileTxt;
+	}
+	
+	
 	
 	
 
