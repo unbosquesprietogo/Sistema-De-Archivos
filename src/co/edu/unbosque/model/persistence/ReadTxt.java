@@ -29,7 +29,7 @@ public class ReadTxt {
 			br.readLine();
 			linea = br.readLine();
 			while(linea !=null) {
-				String[] dataLine = linea.split(",");
+				String[] dataLine = linea.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
 				
 				try {
 				

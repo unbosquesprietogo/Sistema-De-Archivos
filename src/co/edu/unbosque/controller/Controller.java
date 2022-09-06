@@ -16,6 +16,9 @@ public class Controller {
 	
 	public void funcionar() {
 		enlaces.getCreateTxt().generarVariosTxt(20);
+		for (int i = 0; i < enlaces.getReadTxt().readFile().size(); i++) {
+			System.out.println(i+". "+enlaces.getReadTxt().readFile().get(i).toString());
+		}
 	}
 	
 	public void attachShutDownHook(){
