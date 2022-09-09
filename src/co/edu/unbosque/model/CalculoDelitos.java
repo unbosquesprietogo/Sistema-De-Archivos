@@ -1,10 +1,8 @@
 package co.edu.unbosque.model;
 
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -52,6 +50,21 @@ public class CalculoDelitos {
 
 		return listaRegistros;
 
+	}
+	
+	public ArrayList<Delito> eliminaRegistroPorModalidad (String modalidad,  ArrayList<Delito> listaDelitos) {
+		
+		ArrayList<Delito> listaModificada = listaDelitos;
+		
+		for (int i = 0; i < listaModificada.size(); i++) {
+			
+			if (listaModificada.get(i).getModalidad().equals(modalidad)){
+				listaModificada.remove(i);
+			}
+		}
+		
+		return listaModificada;
+		
 	}
 
 }

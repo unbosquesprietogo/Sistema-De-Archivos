@@ -8,6 +8,7 @@ public class Controller {
 	private Enlaces enlaces;
 
 	public Controller() {
+		
 		enlaces = new Enlaces();
 		funcionar();
 		attachShutDownHook();
@@ -15,10 +16,7 @@ public class Controller {
 	}
 	
 	public void funcionar() {
-		enlaces.getCreateTxt().generarVariosTxt(20);
-		for (int i = 0; i < enlaces.getReadTxt().readFile().size(); i++) {
-			System.out.println(i+". "+enlaces.getReadTxt().readFile().get(i).toString());
-		}
+		System.out.println(enlaces.getReadTxt().getFileTxt().porcentajeTamanioArchivos("MarinArevalo_PrietoGonzalez/Numeros"));
 	}
 	
 	public void attachShutDownHook(){
